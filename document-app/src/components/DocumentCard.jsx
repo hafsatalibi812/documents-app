@@ -1,4 +1,3 @@
-// DocumentCard.jsx
 import React from "react";
 import "../styles/DocumentCard.css"; 
 import { useNavigate } from "react-router-dom";
