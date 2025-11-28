@@ -2,62 +2,139 @@ body {
   background-color: #f9f7f2;
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
+  color: hsl(0, 0%, 0%);
 }
 
-/*  DEVIS FORM STYLING  */
+/* FORM CONTAINER */
 .form-container {
-  max-width: 700px;
+  max-width: 800px;
   margin: 50px auto;
-  background: #fff;
-  padding: 30px 40px;
+  background: hsl(0, 0%, 100%);
+  padding: 40px 50px;
   border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px hsla(0, 0%, 0%, 0.1);
 }
 
 .form-container h2 {
   text-align: center;
-  margin-bottom: 20px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-size: 22px;
+  color: hsl(237, 100%, 12%);
 }
 
-.form-container input {
+.form-container h3 {
+  margin-top: 35px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1px solid hsl(0, 0%, 87%);
+  padding-bottom: 5px;
+  color: hsl(237, 100%, 12%);
+}
+
+/* LABELS & INPUTS  */
+.form-container label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: hsl(0, 0%, 7%);
+}
+
+.form-container input,
+.form-container textarea {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 1px solid hsl(0, 0%, 80%);
   border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
 }
 
-.item-row {
+.form-container input:focus,
+.form-container textarea:focus {
+  border-color: hsl(237, 100%, 12%);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+/* ITEMS & TASK ROWS */
+.item-row,
+.task-row {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.item-row input,
+.task-row input {
+  flex: 1;
+  min-width: 140px;
+}
+
+.price-label {
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 
-.item-row input {
-  flex: 1;
+.price-label label {
+  margin: 0;
+  font-weight: 600;
+  white-space: nowrap; 
 }
 
+.price-label input {
+  flex: 1;
+  min-width: 100px;
+}
+
+
+/* BUTTONS */
 button {
-  background-color: #00033d;
-  color: #fff;
+  background-color: hsl(237, 100%, 12%);
+  color: hsl(0, 0%, 100%);
   border: none;
-  padding: 10px 15px;
+  padding: 10px 16px;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 
 button:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
-/*  devis STYLING  */
+.back-btn {
+  display: block;
+  margin: 30px auto 0;
+  background-color: hsl(235, 49%, 26%);
+}
+
+/* DEVIS PREVIEW */
 .devis {
-  color: #000;
+  color: hsl(0, 0%, 0%);
+  background: hsl(0, 0%, 100%);
   padding: 50px;
-  max-width: 800px;
-  margin: 30px auto;
-  border: 1px solid #ddd;
+  max-width: 900px;
+  margin: 40px auto;
+  border: 1px solid hsl(0, 0%, 87%);
+  border-radius: 6px;
+  box-shadow: 0 3px 10px hsla(0, 0%, 0%, 0.1);
 }
 
+/* HEADER*/
 .devis-header {
   display: flex;
   justify-content: space-between;
@@ -66,11 +143,12 @@ button:hover {
 }
 
 .devis-header h1 {
-  font-size: 100px;
+  font-size: 48px;
   font-weight: 800;
   margin: 0;
-  letter-spacing: -4px;
+  letter-spacing: -2px;
   line-height: 1;
+  color: hsl(237, 100%, 12%);
 }
 
 .devis-header-info {
@@ -79,21 +157,40 @@ button:hover {
   line-height: 1.6;
 }
 
-.billed-to {
+/* INFO SECTIONS*/
+.project-description,
+.overview {
+  border-top: 1px solid hsl(0, 0%, 80%);
+  border-bottom: 1px solid hsl(0, 0%, 80%);
+  padding: 15px 0;
+  margin-bottom: 25px;
+}
+
+.infos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
   margin-bottom: 30px;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
 }
 
-.billed-to h3 {
+.infos div {
+  flex: 1;
+  min-width: 250px;
+}
+
+.infos h3 {
   font-weight: 600;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
+  border-bottom: none;
+  color: #00033d;
 }
 
+/* TABLES */
 .devis-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-size: 15px;
 }
 
@@ -106,16 +203,34 @@ button:hover {
 
 .devis-table th {
   font-weight: 600;
+  color: #00033d;
 }
 
+/* FINANCIAL SECTION */
+.financial {
+  border-top: 2px solid #00033d;
+  border-bottom: 2px solid #00033d;
+  padding: 15px 0;
+  font-size: 15px;
+}
 
+.financial h4 {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* FOOTER */
 .devis-footer {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #ccc;
+  flex-wrap: wrap;
   border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   font-size: 14px;
+  padding: 15px 0;
   line-height: 1.6;
+  margin-top: 30px;
 }
 
 .devis-footer h4 {
@@ -124,3 +239,21 @@ button:hover {
 }
 
 
+@media (max-width: 768px) {
+  .devis,
+  .form-container {
+    padding: 25px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .item-row,
+  .task-row {
+    flex-direction: column;
+  }
+}
+
+
+ 
