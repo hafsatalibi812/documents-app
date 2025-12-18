@@ -1,19 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter , Routes, Route } from "react-router-dom";
 import DevisForm from "../forms/DevisForm";
 import DevisPreview from "../forms/DevisPreview";
 import Home from "../pages/Home";
+import About from "../pages/About"; 
 
 
 
 function AppRouter() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/devis-form" element={<DevisForm />} />
-        <Route path="/devis-preview" element={<DevisPreview />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/devis-form" element={<DevisForm />} />
+      <Route path="/devis-preview" element={<DevisPreview />} />
+    </Routes>
   );
 }
 

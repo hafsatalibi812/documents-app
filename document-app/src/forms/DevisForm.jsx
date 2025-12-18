@@ -150,28 +150,28 @@ function DevisForm(){
           onChange={(e) => setClient({ ...client, company: e.target.value })}
         />
         <h3>Our Information</h3>
-        <label>Your Name</label>
+        <label>Name</label>
           <input
             type="text"
             placeholder="Your Name"
             value={ourInfo.name}
             onChange={(e) => setOurInfo({ ...ourInfo, name: e.target.value })}
           />
-          <label>Your Phone</label>
+          <label>Phone</label>
           <input
             type="text"
             placeholder="Phone"
             value={ourInfo.phone}
             onChange={(e) => setOurInfo({ ...ourInfo, phone: e.target.value })}
           />
-          <label>Your Email</label>
+          <label>Email</label>
           <input
             type="email"
             placeholder="Email"
             value={ourInfo.email}
             onChange={(e) => setOurInfo({ ...ourInfo, email: e.target.value })}
           />
-          <label>Your Company</label>
+          <label>Company</label>
           <input
             type="text"
             placeholder="Company"
